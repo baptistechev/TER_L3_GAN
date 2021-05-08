@@ -1,0 +1,95 @@
+====================================================================================================
+> training arguments:
+>>> if_test: False
+>>> run_model: sentigan
+>>> k_label: 2
+>>> dataset: amazon_app_book
+>>> model_type: vanilla
+>>> loss_type: rsgan
+>>> mu_type: ragan
+>>> eval_type: Ra
+>>> d_type: Ra
+>>> if_real_data: True
+>>> cuda: True
+>>> device: 0
+>>> devices: 0
+>>> shuffle: False
+>>> gen_init: truncated_normal
+>>> dis_init: uniform
+>>> n_parent: 1
+>>> eval_b_num: 8
+>>> lambda_fq: 1.0
+>>> lambda_fd: 0.0
+>>> d_out_mean: True
+>>> freeze_dis: False
+>>> freeze_clas: False
+>>> use_all_real_fake: False
+>>> use_population: False
+>>> samples_num: 10000
+>>> vocab_size: 6418
+>>> mle_epoch: 150
+>>> clas_pre_epoch: 10
+>>> adv_epoch: 2000
+>>> inter_epoch: 15
+>>> batch_size: 64
+>>> max_seq_len: 40
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.0001
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 10
+>>> adv_log_step: 20
+>>> train_data: dataset/amazon_app_book.txt
+>>> test_data: dataset/testdata/amazon_app_book_test.txt
+>>> temp_adpt: exp
+>>> evo_temp_step: 1
+>>> temperature: 1
+>>> ora_pretrain: True
+>>> gen_pretrain: False
+>>> dis_pretrain: False
+>>> adv_g_step: 1
+>>> rollout_num: 16
+>>> gen_embed_dim: 32
+>>> gen_hidden_dim: 32
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 5
+>>> adv_d_epoch: 3
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> use_nll_oracle: True
+>>> use_nll_gen: True
+>>> use_nll_div: True
+>>> use_bleu: True
+>>> use_self_bleu: False
+>>> use_clas_acc: True
+>>> use_ppl: False
+>>> log_file: log/log_0420_1930_13.txt
+>>> save_root: save/20210420/amazon_app_book/sentigan_vanilla_dt-Ra_lt-rsgan_mt-ra_et-Ra_sl40_temp1_lfd0.0_T0420_1930_13/
+>>> signal_file: run_signal.txt
+>>> tips: 
+====================================================================================================
+Start training Classifier...
+[PRE-CLAS] epoch 0: c_loss = 0.1552, c_acc = 0.9282, eval_acc = 0.9801, max_eval_acc = 0.9801
+[PRE-CLAS] epoch 1: c_loss = 0.0385, c_acc = 0.9874, eval_acc = 0.9804, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 2: c_loss = 0.0186, c_acc = 0.9946, eval_acc = 0.9794, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 3: c_loss = 0.0099, c_acc = 0.9972, eval_acc = 0.9798, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 4: c_loss = 0.0046, c_acc = 0.9985, eval_acc = 0.9771, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 5: c_loss = 0.0045, c_acc = 0.9984, eval_acc = 0.9778, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 6: c_loss = 0.0039, c_acc = 0.9986, eval_acc = 0.9780, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 7: c_loss = 0.0051, c_acc = 0.9983, eval_acc = 0.9778, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 8: c_loss = 0.0030, c_acc = 0.9991, eval_acc = 0.9776, max_eval_acc = 0.9804
+[PRE-CLAS] epoch 9: c_loss = 0.0021, c_acc = 0.9993, eval_acc = 0.9751, max_eval_acc = 0.9804
+Starting Generator MLE Training...
+[MLE-GEN] epoch 0 : pre_loss = 3.3991, BLEU-[2, 3, 4, 5] = [[0.668, 0.461, 0.271, 0.15], [0.813, 0.596, 0.376, 0.219]], NLL_gen = [3.1662, 2.8961], NLL_div = [2.5655, 2.6407], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9441, 0.9691]
+[MLE-GEN] epoch 10 : pre_loss = 2.5925, BLEU-[2, 3, 4, 5] = [[0.9, 0.716, 0.494, 0.301], [0.9, 0.712, 0.51, 0.338]], NLL_gen = [2.6179, 2.572], NLL_div = [2.5159, 2.7704], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9836, 0.9894]
+[MLE-GEN] epoch 20 : pre_loss = 2.5669, BLEU-[2, 3, 4, 5] = [[0.907, 0.726, 0.516, 0.322], [0.892, 0.695, 0.477, 0.299]], NLL_gen = [2.5963, 2.5501], NLL_div = [2.5105, 2.7243], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9797, 0.991]
+[MLE-GEN] epoch 30 : pre_loss = 2.5553, BLEU-[2, 3, 4, 5] = [[0.899, 0.701, 0.479, 0.291], [0.889, 0.696, 0.488, 0.316]], NLL_gen = [2.5879, 2.5405], NLL_div = [2.5088, 2.7328], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9834, 0.9895]

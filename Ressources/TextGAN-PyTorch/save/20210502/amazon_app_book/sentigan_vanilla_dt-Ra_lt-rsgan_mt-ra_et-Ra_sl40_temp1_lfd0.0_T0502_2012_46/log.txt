@@ -1,0 +1,98 @@
+====================================================================================================
+> training arguments:
+>>> if_test: False
+>>> run_model: sentigan
+>>> k_label: 2
+>>> dataset: amazon_app_book
+>>> model_type: vanilla
+>>> loss_type: rsgan
+>>> mu_type: ragan
+>>> eval_type: Ra
+>>> d_type: Ra
+>>> if_real_data: True
+>>> cuda: True
+>>> device: 0
+>>> devices: 0
+>>> shuffle: False
+>>> gen_init: truncated_normal
+>>> dis_init: uniform
+>>> n_parent: 1
+>>> eval_b_num: 8
+>>> lambda_fq: 1.0
+>>> lambda_fd: 0.0
+>>> d_out_mean: True
+>>> freeze_dis: False
+>>> freeze_clas: False
+>>> use_all_real_fake: False
+>>> use_population: False
+>>> samples_num: 10000
+>>> vocab_size: 6418
+>>> mle_epoch: 150
+>>> clas_pre_epoch: 10
+>>> adv_epoch: 100
+>>> inter_epoch: 15
+>>> batch_size: 64
+>>> max_seq_len: 40
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.0001
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 10
+>>> adv_log_step: 20
+>>> train_data: dataset/amazon_app_book.txt
+>>> test_data: dataset/testdata/amazon_app_book_test.txt
+>>> temp_adpt: exp
+>>> evo_temp_step: 1
+>>> temperature: 1
+>>> ora_pretrain: True
+>>> gen_pretrain: False
+>>> dis_pretrain: False
+>>> adv_g_step: 1
+>>> rollout_num: 16
+>>> gen_embed_dim: 32
+>>> gen_hidden_dim: 32
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 5
+>>> adv_d_epoch: 3
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> use_nll_oracle: True
+>>> use_nll_gen: True
+>>> use_nll_div: True
+>>> use_bleu: True
+>>> use_self_bleu: False
+>>> use_clas_acc: True
+>>> use_ppl: False
+>>> log_file: log/log_0502_2012_46.txt
+>>> save_root: save/20210502/amazon_app_book/sentigan_vanilla_dt-Ra_lt-rsgan_mt-ra_et-Ra_sl40_temp1_lfd0.0_T0502_2012_46/
+>>> signal_file: run_signal.txt
+>>> tips: 
+====================================================================================================
+Start training Classifier...
+[PRE-CLAS] epoch 0: c_loss = 0.1536, c_acc = 0.9389, eval_acc = 0.9802, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 1: c_loss = 0.0384, c_acc = 0.9877, eval_acc = 0.9798, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 2: c_loss = 0.0182, c_acc = 0.9943, eval_acc = 0.9764, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 3: c_loss = 0.0078, c_acc = 0.9977, eval_acc = 0.9739, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 4: c_loss = 0.0052, c_acc = 0.9984, eval_acc = 0.9659, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 5: c_loss = 0.0069, c_acc = 0.9982, eval_acc = 0.9773, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 6: c_loss = 0.0057, c_acc = 0.9980, eval_acc = 0.9779, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 7: c_loss = 0.0042, c_acc = 0.9987, eval_acc = 0.9783, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 8: c_loss = 0.0040, c_acc = 0.9986, eval_acc = 0.9771, max_eval_acc = 0.9802
+[PRE-CLAS] epoch 9: c_loss = 0.0034, c_acc = 0.9987, eval_acc = 0.9784, max_eval_acc = 0.9802
+Starting Generator MLE Training...
+[MLE-GEN] epoch 0 : pre_loss = 3.3331, BLEU-[2, 3, 4, 5] = [[0.762, 0.546, 0.327, 0.18], [0.852, 0.641, 0.431, 0.262]], NLL_gen = [3.0348, 2.8644], NLL_div = [2.7183, 2.93], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9793, 0.9855]
+[MLE-GEN] epoch 10 : pre_loss = 2.5930, BLEU-[2, 3, 4, 5] = [[0.906, 0.723, 0.494, 0.303], [0.887, 0.694, 0.489, 0.317]], NLL_gen = [2.5941, 2.5705], NLL_div = [2.4602, 2.6573], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.987, 0.9853]
+[MLE-GEN] epoch 20 : pre_loss = 2.5694, BLEU-[2, 3, 4, 5] = [[0.909, 0.729, 0.508, 0.323], [0.89, 0.687, 0.473, 0.296]], NLL_gen = [2.5725, 2.5505], NLL_div = [2.4407, 2.6776], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9857, 0.9868]
+[MLE-GEN] epoch 30 : pre_loss = 2.5601, BLEU-[2, 3, 4, 5] = [[0.904, 0.721, 0.505, 0.315], [0.895, 0.698, 0.487, 0.312]], NLL_gen = [2.5649, 2.5427], NLL_div = [2.4151, 2.6806], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9856, 0.9852]
+[MLE-GEN] epoch 40 : pre_loss = 2.5548, BLEU-[2, 3, 4, 5] = [[0.901, 0.724, 0.508, 0.315], [0.893, 0.705, 0.49, 0.313]], NLL_gen = [2.5608, 2.5389], NLL_div = [2.4217, 2.6778], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9851, 0.9866]
+[MLE-GEN] epoch 50 : pre_loss = 2.5513, BLEU-[2, 3, 4, 5] = [[0.904, 0.715, 0.5, 0.309], [0.893, 0.701, 0.489, 0.315]], NLL_gen = [2.5579, 2.5361], NLL_div = [2.4319, 2.6627], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9852, 0.9878]
+[MLE-GEN] epoch 60 : pre_loss = 2.5492, BLEU-[2, 3, 4, 5] = [[0.914, 0.739, 0.534, 0.346], [0.893, 0.704, 0.504, 0.333]], NLL_gen = [2.5566, 2.5344], NLL_div = [2.4499, 2.6529], Self-BLEU-[2, 3, 4] = [0, 0], [PPL-F, PPL-R] = [0, 0], clas_acc = [0.9879, 0.9861]

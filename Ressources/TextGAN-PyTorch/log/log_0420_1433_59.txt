@@ -1,0 +1,901 @@
+====================================================================================================
+> training arguments:
+>>> if_test: 0
+>>> run_model: sentigan
+>>> k_label: 2
+>>> dataset: oracle
+>>> model_type: vanilla
+>>> loss_type: rsgan
+>>> mu_type: ragan
+>>> eval_type: Ra
+>>> d_type: Ra
+>>> if_real_data: 0
+>>> cuda: 1
+>>> device: 0
+>>> devices: 0
+>>> shuffle: 0
+>>> gen_init: normal
+>>> dis_init: uniform
+>>> n_parent: 1
+>>> eval_b_num: 8
+>>> lambda_fq: 1.0
+>>> lambda_fd: 0.0
+>>> d_out_mean: True
+>>> freeze_dis: False
+>>> freeze_clas: False
+>>> use_all_real_fake: False
+>>> use_population: False
+>>> samples_num: 10000
+>>> vocab_size: 5000
+>>> mle_epoch: 120
+>>> clas_pre_epoch: 5
+>>> adv_epoch: 100
+>>> inter_epoch: 15
+>>> batch_size: 64
+>>> max_seq_len: 20
+>>> start_letter: 1
+>>> padding_idx: 0
+>>> gen_lr: 0.01
+>>> gen_adv_lr: 0.0001
+>>> dis_lr: 0.0001
+>>> clip_norm: 5.0
+>>> pre_log_step: 10
+>>> adv_log_step: 1
+>>> train_data: dataset/oracle.txt
+>>> test_data: dataset/testdata/oracle_test.txt
+>>> temp_adpt: exp
+>>> evo_temp_step: 1
+>>> temperature: 1
+>>> ora_pretrain: 1
+>>> gen_pretrain: 0
+>>> dis_pretrain: 0
+>>> adv_g_step: 1
+>>> rollout_num: 16
+>>> gen_embed_dim: 32
+>>> gen_hidden_dim: 32
+>>> goal_size: 16
+>>> step_size: 4
+>>> mem_slots: 1
+>>> num_heads: 2
+>>> head_size: 256
+>>> d_step: 5
+>>> d_epoch: 3
+>>> adv_d_step: 4
+>>> adv_d_epoch: 2
+>>> dis_embed_dim: 64
+>>> dis_hidden_dim: 64
+>>> num_rep: 64
+>>> use_nll_oracle: 1
+>>> use_nll_gen: 1
+>>> use_nll_div: 1
+>>> use_bleu: 1
+>>> use_self_bleu: 1
+>>> use_clas_acc: 1
+>>> use_ppl: 0
+>>> log_file: log/log_0420_1433_59.txt
+>>> save_root: save/20210420/oracle/sentigan_vanilla_dt-Ra_lt-rsgan_mt-ra_et-Ra_sl20_temp1_lfd0.0_T0420_1433_59/
+>>> signal_file: run_signal.txt
+>>> tips: SentiGAN experiments
+====================================================================================================
+Starting Generator MLE Training...
+[MLE-GEN] epoch 0 : pre_loss = 7.8438, NLL_oracle = [10.2306, 10.0141], NLL_gen = [7.6677, 7.7015], NLL_div = [7.7272, 7.7611]
+[MLE-GEN] epoch 10 : pre_loss = 7.0400, NLL_oracle = [9.4847, 9.3043], NLL_gen = [6.9399, 7.0122], NLL_div = [7.012, 7.0656]
+[MLE-GEN] epoch 20 : pre_loss = 6.6900, NLL_oracle = [9.3264, 9.1465], NLL_gen = [6.5883, 6.6951], NLL_div = [6.6436, 6.7291]
+[MLE-GEN] epoch 30 : pre_loss = 6.5189, NLL_oracle = [9.2861, 9.0856], NLL_gen = [6.4256, 6.5011], NLL_div = [6.4696, 6.5284]
+[MLE-GEN] epoch 40 : pre_loss = 6.4160, NLL_oracle = [9.2461, 9.085], NLL_gen = [6.3154, 6.3617], NLL_div = [6.3313, 6.428]
+[MLE-GEN] epoch 50 : pre_loss = 6.3416, NLL_oracle = [9.2317, 9.0563], NLL_gen = [6.2376, 6.276], NLL_div = [6.2459, 6.3186]
+[MLE-GEN] epoch 60 : pre_loss = 6.2971, NLL_oracle = [9.2528, 9.0563], NLL_gen = [6.1728, 6.2313], NLL_div = [6.2029, 6.2622]
+[MLE-GEN] epoch 70 : pre_loss = 6.2615, NLL_oracle = [9.2415, 9.0412], NLL_gen = [6.1178, 6.1962], NLL_div = [6.1592, 6.2244]
+[MLE-GEN] epoch 80 : pre_loss = 6.2336, NLL_oracle = [9.2352, 9.0392], NLL_gen = [6.0897, 6.1649], NLL_div = [6.1269, 6.1844]
+[MLE-GEN] epoch 90 : pre_loss = 6.2119, NLL_oracle = [9.2263, 9.052], NLL_gen = [6.0419, 6.135], NLL_div = [6.1009, 6.1568]
+[MLE-GEN] epoch 100 : pre_loss = 6.1957, NLL_oracle = [9.2145, 9.0546], NLL_gen = [6.043, 6.1081], NLL_div = [6.0911, 6.1337]
+[MLE-GEN] epoch 110 : pre_loss = 6.1840, NLL_oracle = [9.2195, 9.0389], NLL_gen = [6.0526, 6.0913], NLL_div = [6.069, 6.1201]
+[MLE-GEN] epoch 119 : pre_loss = 6.1585, NLL_oracle = [9.2154, 9.0344], NLL_gen = [6.0027, 6.0675], NLL_div = [6.0609, 6.0924]
+Starting Discriminator Training...
+[MLE-DIS] d_step 0: d_loss = 0.6278, train_acc = 0.6793
+[MLE-DIS] d_step 1: d_loss = 0.6041, train_acc = 0.7018
+[MLE-DIS] d_step 2: d_loss = 0.5748, train_acc = 0.7203
+[MLE-DIS] d_step 3: d_loss = 0.5397, train_acc = 0.7347
+[MLE-DIS] d_step 4: d_loss = 0.4893, train_acc = 0.7646
+Starting Adversarial Training...
+Initial generator: NLL_oracle = [9.2169, 9.0421], NLL_gen = [6.0027, 6.0675], NLL_div = [6.0679, 6.0899]
+-----
+ADV EPOCH 0
+-----
+[ADV-GEN]: NLL_oracle = [9.1864, 8.9927], NLL_gen = [6.0108, 6.0868], NLL_div = [6.0386, 6.0492]
+[ADV-DIS] d_step 0: d_loss = 0.4837, train_acc = 0.7734
+[ADV-DIS] d_step 1: d_loss = 0.4483, train_acc = 0.7948
+[ADV-DIS] d_step 2: d_loss = 0.4165, train_acc = 0.8213
+[ADV-DIS] d_step 3: d_loss = 0.3701, train_acc = 0.8500
+-----
+ADV EPOCH 1
+-----
+[ADV-GEN]: NLL_oracle = [9.1417, 8.9034], NLL_gen = [6.0351, 6.1407], NLL_div = [5.9908, 5.9392]
+[ADV-DIS] d_step 0: d_loss = 0.3069, train_acc = 0.8863
+[ADV-DIS] d_step 1: d_loss = 0.2599, train_acc = 0.9112
+[ADV-DIS] d_step 2: d_loss = 0.2127, train_acc = 0.9351
+[ADV-DIS] d_step 3: d_loss = 0.1704, train_acc = 0.9533
+-----
+ADV EPOCH 2
+-----
+[ADV-GEN]: NLL_oracle = [9.0492, 8.7418], NLL_gen = [6.0797, 6.2236], NLL_div = [5.8984, 5.7928]
+[ADV-DIS] d_step 0: d_loss = 0.1126, train_acc = 0.9726
+[ADV-DIS] d_step 1: d_loss = 0.0827, train_acc = 0.9829
+[ADV-DIS] d_step 2: d_loss = 0.0611, train_acc = 0.9891
+[ADV-DIS] d_step 3: d_loss = 0.0491, train_acc = 0.9920
+-----
+ADV EPOCH 3
+-----
+[ADV-GEN]: NLL_oracle = [8.8021, 8.5075], NLL_gen = [6.1536, 6.3609], NLL_div = [5.6644, 5.4475]
+[ADV-DIS] d_step 0: d_loss = 0.0256, train_acc = 0.9963
+[ADV-DIS] d_step 1: d_loss = 0.0202, train_acc = 0.9971
+[ADV-DIS] d_step 2: d_loss = 0.0154, train_acc = 0.9985
+[ADV-DIS] d_step 3: d_loss = 0.0128, train_acc = 0.9989
+-----
+ADV EPOCH 4
+-----
+[ADV-GEN]: NLL_oracle = [8.3197, 8.1895], NLL_gen = [6.2665, 6.5558], NLL_div = [5.2064, 4.7203]
+[ADV-DIS] d_step 0: d_loss = 0.0054, train_acc = 0.9996
+[ADV-DIS] d_step 1: d_loss = 0.0047, train_acc = 0.9994
+[ADV-DIS] d_step 2: d_loss = 0.0041, train_acc = 0.9997
+[ADV-DIS] d_step 3: d_loss = 0.0034, train_acc = 0.9998
+-----
+ADV EPOCH 5
+-----
+[ADV-GEN]: NLL_oracle = [7.6468, 7.689], NLL_gen = [6.4331, 6.8477], NLL_div = [4.5743, 3.6069]
+[ADV-DIS] d_step 0: d_loss = 0.0010, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0009, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0008, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0007, train_acc = 1.0000
+-----
+ADV EPOCH 6
+-----
+[ADV-GEN]: NLL_oracle = [7.0457, 6.554], NLL_gen = [6.6642, 7.2324], NLL_div = [3.9428, 2.3151]
+[ADV-DIS] d_step 0: d_loss = 0.0002, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0002, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0002, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0001, train_acc = 1.0000
+-----
+ADV EPOCH 7
+-----
+[ADV-GEN]: NLL_oracle = [6.3777, 3.6435], NLL_gen = [6.9789, 7.7019], NLL_div = [3.2249, 0.4642]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 8
+-----
+[ADV-GEN]: NLL_oracle = [5.8887, 3.0283], NLL_gen = [7.403, 8.2082], NLL_div = [2.6805, 0.089]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0001, train_acc = 1.0000
+-----
+ADV EPOCH 9
+-----
+[ADV-GEN]: NLL_oracle = [5.7565, 2.9197], NLL_gen = [7.9334, 8.7356], NLL_div = [2.3322, 0.0313]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 10
+-----
+[ADV-GEN]: NLL_oracle = [6.0792, 2.868], NLL_gen = [8.5362, 9.2579], NLL_div = [2.2007, 0.0121]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 11
+-----
+[ADV-GEN]: NLL_oracle = [6.4112, 2.8583], NLL_gen = [9.2325, 9.7618], NLL_div = [2.0211, 0.006]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 12
+-----
+[ADV-GEN]: NLL_oracle = [6.5857, 2.849], NLL_gen = [9.9792, 10.2439], NLL_div = [1.8571, 0.0022]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 13
+-----
+[ADV-GEN]: NLL_oracle = [6.7369, 2.8465], NLL_gen = [10.781, 10.7025], NLL_div = [1.3895, 0.002]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 14
+-----
+[ADV-GEN]: NLL_oracle = [7.1103, 2.8443], NLL_gen = [11.6067, 11.1272], NLL_div = [0.9775, 0.0009]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 15
+-----
+[ADV-GEN]: NLL_oracle = [7.438, 2.8435], NLL_gen = [12.4422, 11.5159], NLL_div = [0.6003, 0.0004]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 16
+-----
+[ADV-GEN]: NLL_oracle = [7.6667, 2.8438], NLL_gen = [13.1979, 11.871], NLL_div = [0.2237, 0.0002]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 17
+-----
+[ADV-GEN]: NLL_oracle = [7.7087, 2.843], NLL_gen = [13.9017, 12.196], NLL_div = [0.0965, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 18
+-----
+[ADV-GEN]: NLL_oracle = [7.71, 2.843], NLL_gen = [14.5404, 12.4919], NLL_div = [0.0625, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 19
+-----
+[ADV-GEN]: NLL_oracle = [7.7072, 2.8431], NLL_gen = [15.1105, 12.7619], NLL_div = [0.0348, 0.0002]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 20
+-----
+[ADV-GEN]: NLL_oracle = [7.7008, 2.843], NLL_gen = [15.6255, 13.0073], NLL_div = [0.0161, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 21
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [16.0981, 13.2306], NLL_div = [0.0118, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 22
+-----
+[ADV-GEN]: NLL_oracle = [7.7073, 2.8435], NLL_gen = [16.5288, 13.4331], NLL_div = [0.0091, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 23
+-----
+[ADV-GEN]: NLL_oracle = [7.7031, 2.8429], NLL_gen = [16.9222, 13.6165], NLL_div = [0.0072, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 24
+-----
+[ADV-GEN]: NLL_oracle = [7.704, 2.843], NLL_gen = [17.2809, 13.7826], NLL_div = [0.0057, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 25
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.843], NLL_gen = [17.607, 13.9326], NLL_div = [0.004, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 26
+-----
+[ADV-GEN]: NLL_oracle = [7.7014, 2.8429], NLL_gen = [17.9046, 14.0685], NLL_div = [0.0042, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 27
+-----
+[ADV-GEN]: NLL_oracle = [7.7017, 2.8429], NLL_gen = [18.1757, 14.1916], NLL_div = [0.0035, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 28
+-----
+[ADV-GEN]: NLL_oracle = [7.7013, 2.843], NLL_gen = [18.4226, 14.3025], NLL_div = [0.0034, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 29
+-----
+[ADV-GEN]: NLL_oracle = [7.7031, 2.8429], NLL_gen = [18.6463, 14.4026], NLL_div = [0.0028, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 30
+-----
+[ADV-GEN]: NLL_oracle = [7.703, 2.8429], NLL_gen = [18.8489, 14.4931], NLL_div = [0.0031, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 31
+-----
+[ADV-GEN]: NLL_oracle = [7.703, 2.8429], NLL_gen = [19.0328, 14.5747], NLL_div = [0.0021, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 32
+-----
+[ADV-GEN]: NLL_oracle = [7.7028, 2.8429], NLL_gen = [19.1987, 14.6482], NLL_div = [0.0019, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 33
+-----
+[ADV-GEN]: NLL_oracle = [7.7034, 2.8429], NLL_gen = [19.3488, 14.7146], NLL_div = [0.0025, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 34
+-----
+[ADV-GEN]: NLL_oracle = [7.7029, 2.8429], NLL_gen = [19.4845, 14.7746], NLL_div = [0.0016, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 35
+-----
+[ADV-GEN]: NLL_oracle = [7.7011, 2.8429], NLL_gen = [19.6069, 14.8286], NLL_div = [0.0018, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 36
+-----
+[ADV-GEN]: NLL_oracle = [7.7026, 2.8429], NLL_gen = [19.7178, 14.8774], NLL_div = [0.0015, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 37
+-----
+[ADV-GEN]: NLL_oracle = [7.7026, 2.8429], NLL_gen = [19.8183, 14.9213], NLL_div = [0.0012, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 38
+-----
+[ADV-GEN]: NLL_oracle = [7.7019, 2.8429], NLL_gen = [19.9095, 14.9609], NLL_div = [0.0013, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 39
+-----
+[ADV-GEN]: NLL_oracle = [7.7015, 2.8431], NLL_gen = [19.992, 14.9966], NLL_div = [0.0013, 0.0002]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 40
+-----
+[ADV-GEN]: NLL_oracle = [7.7016, 2.8429], NLL_gen = [20.0665, 15.0288], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 41
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.1343, 15.0578], NLL_div = [0.0009, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 42
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.843], NLL_gen = [20.1957, 15.084], NLL_div = [0.001, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 43
+-----
+[ADV-GEN]: NLL_oracle = [7.7024, 2.8429], NLL_gen = [20.2511, 15.1076], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 44
+-----
+[ADV-GEN]: NLL_oracle = [7.701, 2.843], NLL_gen = [20.3013, 15.1288], NLL_div = [0.0016, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 45
+-----
+[ADV-GEN]: NLL_oracle = [7.7017, 2.8429], NLL_gen = [20.3466, 15.148], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 46
+-----
+[ADV-GEN]: NLL_oracle = [7.7019, 2.8429], NLL_gen = [20.3875, 15.1652], NLL_div = [0.0009, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 47
+-----
+[ADV-GEN]: NLL_oracle = [7.7018, 2.8429], NLL_gen = [20.4245, 15.1807], NLL_div = [0.0007, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 48
+-----
+[ADV-GEN]: NLL_oracle = [7.7017, 2.8429], NLL_gen = [20.4581, 15.1947], NLL_div = [0.0007, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 49
+-----
+[ADV-GEN]: NLL_oracle = [7.7018, 2.8429], NLL_gen = [20.4885, 15.2072], NLL_div = [0.0008, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 50
+-----
+[ADV-GEN]: NLL_oracle = [7.7012, 2.8429], NLL_gen = [20.5161, 15.2186], NLL_div = [0.0008, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 51
+-----
+[ADV-GEN]: NLL_oracle = [7.7024, 2.8429], NLL_gen = [20.5411, 15.2288], NLL_div = [0.0009, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 52
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.5637, 15.238], NLL_div = [0.0008, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 53
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.5843, 15.2463], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 54
+-----
+[ADV-GEN]: NLL_oracle = [7.7019, 2.8429], NLL_gen = [20.603, 15.2537], NLL_div = [0.001, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 55
+-----
+[ADV-GEN]: NLL_oracle = [7.7019, 2.8429], NLL_gen = [20.6199, 15.2604], NLL_div = [0.0008, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 56
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8433], NLL_gen = [20.6352, 15.2665], NLL_div = [0.0006, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 57
+-----
+[ADV-GEN]: NLL_oracle = [7.7018, 2.8429], NLL_gen = [20.6492, 15.272], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 58
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.6618, 15.2769], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 59
+-----
+[ADV-GEN]: NLL_oracle = [7.7024, 2.8429], NLL_gen = [20.6734, 15.2813], NLL_div = [0.0007, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 60
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.6839, 15.2853], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 61
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.6935, 15.2888], NLL_div = [0.0009, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 62
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7022, 15.2921], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 63
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7101, 15.295], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 64
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7173, 15.2976], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 65
+-----
+[ADV-GEN]: NLL_oracle = [7.7018, 2.8429], NLL_gen = [20.7239, 15.2999], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 66
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7298, 15.3021], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 67
+-----
+[ADV-GEN]: NLL_oracle = [7.7018, 2.8429], NLL_gen = [20.7353, 15.304], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 68
+-----
+[ADV-GEN]: NLL_oracle = [7.7017, 2.8429], NLL_gen = [20.7404, 15.3057], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 69
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.745, 15.3072], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 70
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7493, 15.3086], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 71
+-----
+[ADV-GEN]: NLL_oracle = [7.7017, 2.8429], NLL_gen = [20.7533, 15.3099], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 72
+-----
+[ADV-GEN]: NLL_oracle = [7.7025, 2.843], NLL_gen = [20.7569, 15.311], NLL_div = [0.0006, 0.0001]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 73
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7602, 15.312], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 74
+-----
+[ADV-GEN]: NLL_oracle = [7.7024, 2.8429], NLL_gen = [20.7633, 15.3129], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 75
+-----
+[ADV-GEN]: NLL_oracle = [7.7016, 2.8429], NLL_gen = [20.7661, 15.3137], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 76
+-----
+[ADV-GEN]: NLL_oracle = [7.702, 2.8429], NLL_gen = [20.7688, 15.3145], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 77
+-----
+[ADV-GEN]: NLL_oracle = [7.702, 2.8429], NLL_gen = [20.7713, 15.3151], NLL_div = [0.0008, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 78
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7735, 15.3157], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 79
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7756, 15.3163], NLL_div = [0.0005, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 80
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7776, 15.3168], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 81
+-----
+[ADV-GEN]: NLL_oracle = [7.7024, 2.8429], NLL_gen = [20.7794, 15.3172], NLL_div = [0.0002, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 82
+-----
+[ADV-GEN]: NLL_oracle = [7.7017, 2.8429], NLL_gen = [20.7811, 15.3176], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 83
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7827, 15.318], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 84
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7842, 15.3183], NLL_div = [0.0002, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 85
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7856, 15.3186], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 86
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.787, 15.3188], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 87
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7883, 15.319], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 88
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7895, 15.3192], NLL_div = [0.0001, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 89
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7906, 15.3194], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 90
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7917, 15.3196], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 91
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7928, 15.3197], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 92
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7938, 15.3199], NLL_div = [0.0001, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 93
+-----
+[ADV-GEN]: NLL_oracle = [7.7027, 2.8429], NLL_gen = [20.7948, 15.32], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 94
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7957, 15.3201], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 95
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7966, 15.3202], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 96
+-----
+[ADV-GEN]: NLL_oracle = [7.7022, 2.8429], NLL_gen = [20.7975, 15.3203], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 97
+-----
+[ADV-GEN]: NLL_oracle = [7.7023, 2.8429], NLL_gen = [20.7983, 15.3204], NLL_div = [0.0006, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 98
+-----
+[ADV-GEN]: NLL_oracle = [7.7021, 2.8429], NLL_gen = [20.7991, 15.3204], NLL_div = [0.0004, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
+-----
+ADV EPOCH 99
+-----
+[ADV-GEN]: NLL_oracle = [7.7024, 2.8429], NLL_gen = [20.7998, 15.3205], NLL_div = [0.0003, 0.0]
+[ADV-DIS] d_step 0: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 1: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 2: d_loss = 0.0000, train_acc = 1.0000
+[ADV-DIS] d_step 3: d_loss = 0.0000, train_acc = 1.0000
