@@ -5,7 +5,7 @@ Authors : CHEVALIER Baptiste, LEHAOUIAOUI Sara, LEMONNIER Adam, ZEDDAM Lylia
 
 Subject : Understanding and comparing different GAN architectures and text generation models.
 
-Report link : ../../tree/master/GAN rapport.pdf
+Report link : (../../tree/master/"GAN rapport.pdf")
 
 Content :
 
