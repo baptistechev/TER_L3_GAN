@@ -9,7 +9,7 @@ Report link : https://fr.overleaf.com/read/tjgnrhgcqpjh
 
 Content :
 
-- [Experimentation](../../tree/master/Experimentation.ipynb) : experimentation on the efficiency off different text generation models (LSTM, Embeddings, GAN on different sets).
+- [Experimentation](../../tree/master/Experimentation.ipynb) : experimentation on the efficiency of different text generation models (LSTM, Embeddings, GAN on different sets).
 
 - [IrisGAN](../../tree/master/IrisGAN.ipynb) : generation of artificial Iris vectors from the Iris-dataset using different GAN architectures.
 
