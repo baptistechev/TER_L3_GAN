@@ -5,8 +5,6 @@ Authors : CHEVALIER Baptiste, LEHAOUIAOUI Sara, LEMONNIER Adam, ZEDDAM Lylia
 
 Subject : Understanding and comparing different GAN architectures and text generation models.
 
-[Report link](../../tree/master/'GAN rapport.pdf')
-
 Content :
 
 - [Experimentation](../../tree/master/Experimentation.ipynb) : experimentation on the efficiency of different text generation models (LSTM, Embeddings, GAN on different sets).
